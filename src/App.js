@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { v1 } from 'uuid'
 import CollapsePanel from './CollapsePanel'
 import './App.css'
-import { Button } from 'reactstrap';
+import { Button } from 'react-bootstrap';
 import { HISTORY } from './constants'
 import HeadBlockNum from './services/headBlockNum'
 import BlockInfo from './services/blockInfo'
@@ -27,7 +27,7 @@ class App extends Component {
     this.fetchRecentBlocks(v1())
   }
 
-  fetchRecentBlocks = async (id) => {
+  fetchRecentBlocks = async(id) => {
     if (id !== this._currentId) {
       this._currentId = id
       this.setState({ isLoading: true })
@@ -46,10 +46,12 @@ class App extends Component {
     const { isLoading, blocks } = this.state
     return (
       <div className="App">
+        <h1>Welcome, Justin!</h1>
+        <p> Please click the button below to reload block data.</p>
         <Button id='load-button' data-cy="load" children={`LOAD (${HISTORY})`}
             onClick={this.handleFetch} disabled={isLoading} />
         <hr />
-        { !isLoading ? <CollapsePanel blocks={blocks} /> : <p>Loading...</p> }
+        { !isLoading ? <CollapsePanel blocks={blocks} /> : <h2>Loading...</h2> }
       </div>
     )
   }

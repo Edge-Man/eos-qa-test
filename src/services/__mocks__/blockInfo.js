@@ -18,7 +18,7 @@ const fakeData = {
       more: 'fields',
     },
     timestamp: 'some-timestamp',
-  },
+  }
 }
 
 export default async (id) => {

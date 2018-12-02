@@ -2,7 +2,7 @@ jest.mock('./blockInfo')
 
 import blockInfo from './blockInfo'
 
-it('returns block info', async () => {
+it('returns block values', async () => {
   const EXPECTED_VALUE = {
     action_cnt: '2',
     block_num: 10000002,
